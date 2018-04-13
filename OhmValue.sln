@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OhmValue", "OhmValue\OhmValue.csproj", "{31FD54C3-4DDE-4B5A-9A33-47B1C29103FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OhmValue.Tests", "OhmValue.Tests\OhmValue.Tests.csproj", "{2848CEA0-4A81-47CD-935F-5A95F34664D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31FD54C3-4DDE-4B5A-9A33-47B1C29103FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31FD54C3-4DDE-4B5A-9A33-47B1C29103FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31FD54C3-4DDE-4B5A-9A33-47B1C29103FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31FD54C3-4DDE-4B5A-9A33-47B1C29103FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2848CEA0-4A81-47CD-935F-5A95F34664D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2848CEA0-4A81-47CD-935F-5A95F34664D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2848CEA0-4A81-47CD-935F-5A95F34664D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2848CEA0-4A81-47CD-935F-5A95F34664D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD84B934-EE03-4A2A-979A-7843E7E2E96F}
+	EndGlobalSection
+EndGlobal

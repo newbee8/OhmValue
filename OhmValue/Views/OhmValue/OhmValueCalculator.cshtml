@@ -1,0 +1,88 @@
+﻿@model OhmValue.Models.ResistorBands
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>OhmValueCalculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div style=" min-height: 100vh;  display: flex; align-items: center;">
+
+        <div class="jumbotron container text-secondary text-center">
+            <h2 class="">
+                Ohm Value Calculator
+            </h2>
+            <div style="padding-top:50px;">
+                @using (Html.BeginForm())
+                {
+                    foreach (var band in Model.Bands)
+                    {
+                        <div class="form-group">
+                            <h6 class="text-secondary"> Select a color for @band.BandName: </h6>
+                            @foreach (var color in band.BandColors)
+                            {<span class="btn-group" data-toggle="buttons">
+                                    @if (band.BandName == "Band A")
+                                    {
+                                        <label class="btn btn-sm" style="background-color:@color.ColorCode; color:@color.TextColorCode; border: 2px solid grey !important;">
+                                            @Html.RadioButtonFor(s => s.selectedBandA, color.ColorDescription)
+                                            @color.ColorDescription - @color.BandValue
+                                        </label>
+                                    }
+                                </span>
+                                if (band.BandName == "Band B")
+                                {
+                                    <span class="btn-group" data-toggle="buttons">
+                                        <label class="btn btn-sm" style="background-color:@color.ColorCode; color:@color.TextColorCode; border: 2px solid grey !important;">
+                                            @Html.RadioButtonFor(s => s.selectedBandB, color.ColorDescription)
+                                            @color.ColorDescription - @color.BandValue
+                                        </label>
+                                    </span>
+                                }
+                                if (band.BandName == "Multiplier")
+                                {
+                                    <span class="btn-group" data-toggle="buttons">
+                                        <label class="btn btn-sm" style="background-color:@color.ColorCode; color:@color.TextColorCode; border: 2px solid grey !important;">
+                                            @Html.RadioButtonFor(s => s.selectedMultiplierBand, color.ColorDescription)
+                                            @color.ColorDescription - 10<sup>@color.BandValue</sup>
+                                        </label>
+                                    </span>
+                                }
+                                if (band.BandName == "Tolerance")
+                                {
+                                    <span class="btn-group" data-toggle="buttons">
+                                        <label class="btn btn-sm" style="background-color:@color.ColorCode; color:@color.TextColorCode; border: 2px solid grey !important;">
+                                            @Html.RadioButtonFor(s => s.selectedToleranceBand, color.ColorDescription)
+                                            @color.ColorDescription - @color.BandValue
+                                        </label>
+                                    </span>
+                                }
+
+                            }
+                        </div>
+                    }
+
+                    <div class="text-center" style="padding-top:50px;">
+                        <input type="submit" class="btn btn-info .btn-lg" value="Calculate" style="width:40%" />
+                        <br /><br />
+                        <h4>
+                            Ohm Value:  @ViewBag.OhmValue &Omega; &plusmn; @ViewBag.Tolerance &percnt; @ViewBag.Range
+                        </h4>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
